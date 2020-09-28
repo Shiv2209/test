@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+    </head>
+    <body>
+        <form name="myForm" onsubmit="return validateForm();" method="post"> 
+            <input type="text" name="firstname">
+            <input type="check" name="checkme">
+            <input type="submit" value="submit">
+         </form>  
+    </body>
+    <script>
+        function validateForm() {
+            let valid= true;
+            if(document.forms["myForm"]["firstname"].value==""){
+                alert("First name can't be blank");
+                valid = false;
+            }
+            if(document.forms["myForm"]["checkme"].value==false){
+                alert("you should check it");
+                valid = false;
+            }
+            return valid;
+        }
+    </script>
+</html>
+
